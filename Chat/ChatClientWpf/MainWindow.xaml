@@ -1,0 +1,20 @@
+﻿<Window x:Class="ChatClientWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatClientWpf"
+        xmlns:viewmodel="clr-namespace:ChatClientWpf.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Enter name:"/>
+            <TextBox Text="{Binding User}"/>
+            <Button IsEnabled="{Binding IsNotConnected}" Content="Connect" Command="{Binding ConnectCommand}"/>
+            <TextBox Text="{Binding Message}"/>
+            <Button Content="Send" IsEnabled="{Binding IsConnected}" Command="{Binding SendCommand}"/>
+            <ListBox Height="300" Margin="20" ItemsSource="{Binding Messages}"/>
+        </StackPanel>
+    </Grid>
+</Window>
